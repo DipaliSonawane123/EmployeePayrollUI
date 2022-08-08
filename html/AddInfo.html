@@ -8,7 +8,8 @@
     <title>Employee Payroll Form</title>
     <link rel="stylesheet" href="../css/Form.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap">
-   
+    <script type="text/JavaScript" src="../js/form.js"></script>
+    <script type="text/JavaScript" src="../js/EmployeePayrollData.js"></script>
 </head>
 
 <body>
@@ -24,17 +25,18 @@
     </header>
     <!-- UC2 Form with header and name-->
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save();return false">
+        <form class="form" action="#"onreset="resetForm()"; onsubmit="save();return false">
             <div class="form-head">
                 Employee Payroll form
             </div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
+                <error-output class="text-error" for="text"></error-output>
             </div>
             <!-- UC3 Specify profile pic in the form -->
             <div class="row-content">
-                <label class="lael text" for="profile">Profile Image</label>
+                <label class="label text" for="profile">Profile Image</label>
                 <div class="profile-radio-content">
                     <label>
                         <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse -3.png"
@@ -71,15 +73,15 @@
             <div class="row-content">
                 <label class="label text" for="department">Department</label>
                 <div>
-                    <input type="checkbox" id="hr" name="hr" value="HR">
+                    <input type="checkbox" id="hr" name="department" value="HR">
                     <label class="text" for="hr">HR</label>
-                    <input type="checkbox" id="sales" name="sales" value="Sales">
+                    <input type="checkbox" id="sales" name="department" value="Sales">
                     <label class="text" for="sales">Sales</label>
-                    <input type="checkbox" id="finance" name="finance" value="Finance">
+                    <input type="checkbox" id="finance" name="department" value="Finance">
                     <label class="text" for="finance">Finance</label>
-                    <input type="checkbox" id="engineer" name="engineer" value="Engineer">
+                    <input type="checkbox" id="engineer" name="department" value="Engineer">
                     <label class="text" for="engineer">Engineer</label>
-                    <input type="checkbox" id="others" name="others" value="Others">
+                    <input type="checkbox" id="others" name="department" value="Others">
                     <label class="text" for="others">Others</label>
                 </div>
             </div>
@@ -141,14 +143,14 @@
                         <option value="Dec">December</option>
                     </select>
                     <select id="year" name="Year">
-                        <option value="2021">2022</option>
+                        <option value="2022">2022</option>
                         <option value="2021">2021</option>
                         <option value="2020">2020</option>
                         <option value="2019">2019</option>
                         <option value="2018">2018</option>
                         <option value="2017">2017</option>
-                        <option value="2021">2016</option>
                     </select>
+                    <error-output class="date-error"></error-output>
                 </div>
             </div>
             <!-- UC6 Add notes and button-->
@@ -166,8 +168,6 @@
             </div>
         </form>
     </div>
-    <script type="text/JavaScript" src="../js/form.js"></script>
-    <script type="text/JavaScript" src="../js/EmployeePayrollData.js"></script>
 </body>
 
 </html>
